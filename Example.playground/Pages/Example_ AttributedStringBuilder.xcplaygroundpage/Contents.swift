@@ -1,5 +1,3 @@
-//: A UIKit based Playground for presenting user interface
-
 import UIKit
 import PlaygroundSupport
 import SCTypeKit
@@ -50,7 +48,7 @@ view.attributedText = builder
   ])
   .spaces(20)
   .text("Back", attributes: [
-    .font(UIFont(name: "Marker Felt", size: 50) ?? ?? .systemFont(ofSize: 50)),
+    .font(UIFont(name: "Marker Felt", size: 50) ?? .systemFont(ofSize: 50)),
     .textColor(.white),
     .strokeColor(.red),
     .strokeWidth(2)
