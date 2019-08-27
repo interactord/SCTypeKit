@@ -4,7 +4,7 @@ import UIKit
 import PlaygroundSupport
 import SCTypeKit
 
-let container = UIView(frame: CGRect(x: 0, y: 0, width: 1550, height: 700))
+let container = UIView(frame: CGRect(x: 0, y: 0, width: 1_550, height: 700))
 let view = UILabel(frame: container.frame)
 
 let builder = AttributedStringBuilder()
@@ -26,7 +26,7 @@ view.attributedText = builder
   .space()
   .text("was going", attributes: [
     .font(UIFont.systemFont(ofSize: 70, weight: .medium)),
-    .textColor(.gray),
+    .textColor(.gray)
   ])
   .spaces(5)
   .text("to", attributes: [
@@ -35,7 +35,7 @@ view.attributedText = builder
   ])
   .spaces(5)
   .text("be", attributes: [
-    .font(UIFont(name: "AvenirNext-Bold", size: 70)!),
+    .font(UIFont(name: "AvenirNext-Bold", size: 70) ?? .systemFont(ofSize: 70)),
     .textColor(UIColor.yellow),
     .kerning(5),
     .shadow(shadow),
@@ -44,13 +44,13 @@ view.attributedText = builder
   ])
   .spaces(15)
   .text("a lonely", attributes: [
-    .font(UIFont(name: "SnellRoundhand", size: 60)!),
+    .font(UIFont(name: "SnellRoundhand", size: 60) ?? .systemFont(ofSize: 70)),
     .textColor(.purple),
     .kerning(5)
   ])
   .spaces(20)
   .text("Back", attributes: [
-    .font(UIFont(name: "Marker Felt", size: 50)!),
+    .font(UIFont(name: "Marker Felt", size: 50) ?? ?? .systemFont(ofSize: 50)),
     .textColor(.white),
     .strokeColor(.red),
     .strokeWidth(2)
