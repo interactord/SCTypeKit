@@ -1,0 +1,33 @@
+osx_image: xcode10.2
+language: objective-c
+sudo: required
+
+env:
+  global:
+    - PROJECT="SCTypeKit.xcodeproj"
+    - SCHEME="SCTypeKit"
+    - IOS_SDK="iphonesimulator12.2"
+    - DESTINATION="platform=iOS Simulator,name=iPhone 7,OS=12.2"
+    - FRAMEWORK="SCTypeKit"
+
+install:
+  - swift --version
+
+before_script:
+  - gem install xcpretty -N
+  - gem install xcpretty-travis-formatter
+  - brew install swiftlint
+
+script:
+  - set -o pipefail
+  - xcodebuild clean build
+    -project "$PROJECT"
+    -scheme "$SCHEME"
+    -sdk "$IOS_SDK"
+    -destination "$DESTINATION"
+    -configuration Debug
+    CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -f `xcpretty-travis-formatter`
+
+notifications:
+  slack: interactord:Z4o1u31lio6owH5ic2qWuSGo
+  on_success: always
