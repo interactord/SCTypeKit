@@ -21,7 +21,7 @@ excluded:
   - Pods
   - vendor
 cyclomatic_complexity:
-  warning: 15
+  warning: 30
 line_length: 200
 file_length: 500
 force_unwrapping: error

@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		29BE95EF2314E39B00EECB11 /* SCTypeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 29BE95E12314E39B00EECB11 /* SCTypeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F426E11F172F5441C5822ACC /* AttributedStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E0A37A1BE857FD50DBF4 /* AttributedStringBuilder.swift */; };
+		F426E6474092220FA3EA633C /* FontBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E3BE545D80546109DBC3 /* FontBuilder.swift */; };
+		F426E67A13FC642E01231B43 /* AttributedStringType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426EFF3AE99AA848E3EF75B /* AttributedStringType.swift */; };
 		F426E867EA8278FC7CED7085 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E31305EA9499648A1675 /* Builder.swift */; };
-		F426EBAE1C9701DF89C8ED80 /* FontBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E5EA68D3CEA02D1985CB /* FontBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,8 +19,10 @@
 		29BE95E12314E39B00EECB11 /* SCTypeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCTypeKit.h; sourceTree = "<group>"; };
 		29BE95E22314E39B00EECB11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BE95F82314E3F300EECB11 /* Example.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Example.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		F426E0A37A1BE857FD50DBF4 /* AttributedStringBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringBuilder.swift; sourceTree = "<group>"; };
 		F426E31305EA9499648A1675 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
-		F426E5EA68D3CEA02D1985CB /* FontBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontBuilder.swift; sourceTree = "<group>"; };
+		F426E3BE545D80546109DBC3 /* FontBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontBuilder.swift; sourceTree = "<group>"; };
+		F426EFF3AE99AA848E3EF75B /* AttributedStringType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +72,28 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		F426EA6A5587CE672E6F3D9A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F426E3BE545D80546109DBC3 /* FontBuilder.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		F426EAF31F76D339289DF8D7 /* AttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				F426E0A37A1BE857FD50DBF4 /* AttributedStringBuilder.swift */,
+				F426EFF3AE99AA848E3EF75B /* AttributedStringType.swift */,
+			);
+			path = AttributedString;
+			sourceTree = "<group>";
+		};
 		F426EF07F12D45580110D248 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				F426E5EA68D3CEA02D1985CB /* FontBuilder.swift */,
+				F426EA6A5587CE672E6F3D9A /* Font */,
+				F426EAF31F76D339289DF8D7 /* AttributedString */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -180,7 +202,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F426E867EA8278FC7CED7085 /* Builder.swift in Sources */,
-				F426EBAE1C9701DF89C8ED80 /* FontBuilder.swift in Sources */,
+				F426E6474092220FA3EA633C /* FontBuilder.swift in Sources */,
+				F426E11F172F5441C5822ACC /* AttributedStringBuilder.swift in Sources */,
+				F426E67A13FC642E01231B43 /* AttributedStringType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
