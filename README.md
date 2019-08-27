@@ -7,7 +7,25 @@
 
 # 📚 Overview
 
+## **1. FontBuilder**
 <img src="screenshots/example1.png" width="100%" />
+
+```swift
+
+let container = UIView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
+let view = UILabel(frame: container.frame)
+
+view.numberOfLines = 1
+view.text = "I watched the storm, so beautiful yet terrific."
+view.textAlignment = .center
+view.font = FontBuilder()
+  .fontName("KannadaSangamMN")
+  .fontSize(20)
+  .build()
+```
+#
+## **2. AttributedStringBuilder**
+<img src="screenshots/example2.png" width="100%" />
 
 ```swift
 let builder = AttributedStringBuilder()
