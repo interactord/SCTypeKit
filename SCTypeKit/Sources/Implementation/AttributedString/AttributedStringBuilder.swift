@@ -143,7 +143,6 @@ extension AttributedStringBuilder {
     let ratio = anImage.size.width / anImage.size.height
     let size = CGSize(width: height * ratio, height: height)
     return image(anImage, size: size)
-
   }
 
   @discardableResult

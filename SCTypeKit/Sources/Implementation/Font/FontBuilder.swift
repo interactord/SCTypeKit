@@ -5,7 +5,7 @@
 
 import UIKit
 
-public struct FontBuilder: Builder {
+public class FontBuilder: Builder {
 
 	private var ptSize: CGFloat = UIFont.systemFontSize
 	private var font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
@@ -16,7 +16,7 @@ public struct FontBuilder: Builder {
 	}
 
 	@discardableResult
-	public mutating func fontName(_ name: String) -> FontBuilder {
+	public func fontName(_ name: String) -> FontBuilder {
 		if let font = UIFont(name: name, size: ptSize) {
 			self.font = font
 			self.fontFamily = name
@@ -25,7 +25,7 @@ public struct FontBuilder: Builder {
 	}
 
 	@discardableResult
-	public mutating func fontSize(_ size: CGFloat) -> FontBuilder {
+	public func fontSize(_ size: CGFloat) -> FontBuilder {
 		if let font = UIFont(name: fontFamily, size: size) {
 			self.font = font
 		}
