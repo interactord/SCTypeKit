@@ -6,7 +6,6 @@
 import Foundation
 
 public enum AttributedType {
-
   /// NSFontAttributeName
   case font(UIFont)
 
@@ -69,48 +68,46 @@ public enum AttributedType {
   }
 
   private func keyAndValue(for type: AttributedType) -> (NSAttributedString.Key, Any?) {
-
     switch type {
-    case .font(let value):
+    case let .font(value):
       return (key: .font, value: value)
-    case .paragraphStyle(let value):
+    case let .paragraphStyle(value):
       return (key: .paragraphStyle, value: value)
-    case .textColor(let value):
+    case let .textColor(value):
       return (key: .foregroundColor, value: value)
-    case .backgroundColor(let value):
+    case let .backgroundColor(value):
       return (key: .backgroundColor, value: value)
-    case .ligature(let value):
+    case let .ligature(value):
       return (key: .ligature, value: value)
-    case .kerning(let value):
+    case let .kerning(value):
       return (key: .kern, value: value)
-    case .letterSpacing(let value):
+    case let .letterSpacing(value):
       return (key: .kern, value: value)
-    case .strikethrough(let value):
+    case let .strikethrough(value):
       return (key: .strikethroughStyle, value: value)
-    case .strikethroughColor(let value):
+    case let .strikethroughColor(value):
       return (key: .strikethroughColor, value: value)
-    case .strokeColor(let value):
+    case let .strokeColor(value):
       return (key: .strokeColor, value: value)
-    case .strokeWidth(let value):
+    case let .strokeWidth(value):
       return (key: .strokeWidth, value: value)
-    case .underline(let value):
+    case let .underline(value):
       return (key: .underlineStyle, value: value)
-    case .underlineColor(let value):
+    case let .underlineColor(value):
       return (key: .underlineColor, value: value)
-    case .shadow(let value):
+    case let .shadow(value):
       return (key: .shadow, value: value)
-    case .baselineOffset(let value):
+    case let .baselineOffset(value):
       return (key: .baselineOffset, value: value)
-    case .skew(let value):
+    case let .skew(value):
       return (key: .obliqueness, value: value)
-    case .expansion(let value):
+    case let .expansion(value):
       return (key: .expansion, value: value)
     case .alignment:
       return (.paragraphStyle, nil)
     case .lineSpacing:
       return (.paragraphStyle, nil)
     }
-
   }
 
   private func configureParagraph(_ configure: (NSMutableParagraphStyle) -> Void) -> NSMutableParagraphStyle {
@@ -120,17 +117,15 @@ public enum AttributedType {
   }
 
   func configureParagraphStyle(_ par: NSMutableParagraphStyle) {
-
     switch self {
-    case .paragraphStyle(let value):
+    case let .paragraphStyle(value):
       par.setParagraphStyle(value)
-    case .alignment(let value):
+    case let .alignment(value):
       par.alignment = value
-    case .lineSpacing(let value):
+    case let .lineSpacing(value):
       par.lineSpacing = value
     default:
       break
     }
-
   }
 }

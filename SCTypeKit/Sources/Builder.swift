@@ -6,7 +6,7 @@
 import Foundation
 
 public protocol Builder {
-	associatedtype BuildType
+  associatedtype BuildType
 
-	func build() -> BuildType
+  func build() -> BuildType
 }

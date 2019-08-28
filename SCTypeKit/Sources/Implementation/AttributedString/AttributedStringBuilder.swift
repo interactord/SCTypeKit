@@ -6,27 +6,25 @@
 import UIKit
 
 public class AttributedStringBuilder {
-
   // MARK: - Properties
 
   private var baseAttributedString = NSMutableAttributedString()
   public var defaultAttributes = [AttributedType]()
 
   // MARK: - Method
-  public init() { }
 
-	public convenience init(attribute: [AttributedType]) {
-		self.init()
-		defaultAttributes = attribute
-	}
+  public init() {}
+
+  public convenience init(attribute: [AttributedType]) {
+    self.init()
+    defaultAttributes = attribute
+  }
 
   private func attributesDictionary(with overrides: [AttributedType]) -> [NSAttributedString.Key: Any] {
-
     var attributeDic = [NSAttributedString.Key: Any]()
     let paragraphStyle = NSMutableParagraphStyle()
 
     (defaultAttributes + overrides).forEach {
-
       let key = $0.key
       let value = $0.value
 
@@ -36,6 +34,12 @@ public class AttributedStringBuilder {
     }
     attributeDic[.paragraphStyle] = paragraphStyle
     return attributeDic
+  }
+
+  @discardableResult
+  public func updated(with attributed: [AttributedType]) -> AttributedStringBuilder {
+    defaultAttributes = (defaultAttributes + attributed)
+    return self
   }
 
   @discardableResult
@@ -57,12 +61,11 @@ public class AttributedStringBuilder {
     baseAttributedString.append(attributedString)
     return self
   }
-
 }
 
 // MARK: - Strings
-extension AttributedStringBuilder {
 
+extension AttributedStringBuilder {
   @discardableResult
   public func text(_ string: String, attributes: [AttributedType] = []) -> AttributedStringBuilder {
     let attributes = attributesDictionary(with: attributes)
@@ -73,7 +76,7 @@ extension AttributedStringBuilder {
 
   @discardableResult
   public func spaces(_ number: Int, attributes: [AttributedType] = []) -> AttributedStringBuilder {
-    [0..<number].forEach { _ in
+    [0 ..< number].forEach { _ in
       space(attributes: attributes)
     }
     return self
@@ -86,7 +89,7 @@ extension AttributedStringBuilder {
 
   @discardableResult
   public func newLines(_ number: Int, attributes: [AttributedType] = []) -> AttributedStringBuilder {
-    [0..<number].forEach { _ in
+    [0 ..< number].forEach { _ in
       newLine(attributes: attributes)
     }
     return self
@@ -99,7 +102,7 @@ extension AttributedStringBuilder {
 
   @discardableResult
   public func tabs(_ number: Int, attributes: [AttributedType] = []) -> AttributedStringBuilder {
-    [0..<number].forEach { _ in
+    [0 ..< number].forEach { _ in
       tab(attributes: attributes)
     }
     return self
@@ -109,13 +112,11 @@ extension AttributedStringBuilder {
   public func tab(attributes: [AttributedType] = []) -> AttributedStringBuilder {
     return text("\t", attributes: attributes)
   }
-
 }
 
 // MARK: - Images
 
 extension AttributedStringBuilder {
-
   @discardableResult
   public func image(_ anImage: UIImage) -> AttributedStringBuilder {
     let attachment = NSTextAttachment()
@@ -154,16 +155,13 @@ extension AttributedStringBuilder {
   public func image(_ anImage: UIImage, fitOfFontLowercase font: UIFont) -> AttributedStringBuilder {
     return image(anImage, height: font.xHeight)
   }
-
 }
 
 // MARK: - Builder
 
 extension AttributedStringBuilder: Builder {
-
   public func build() -> NSAttributedString {
-		clear()
+    clear()
     return baseAttributedString
   }
-
 }
