@@ -8,7 +8,7 @@
 # 📚 Overview
 
 ## **1. FontBuilder**
-<img src="screenshots/example1.png" width="100%" />
+<img src="https://user-images.githubusercontent.com/47267960/63836294-42970300-c9b4-11e9-8f6c-e8ec3e88c076.png" width="100%" />
 
 ```swift
 
@@ -25,7 +25,7 @@ view.font = FontBuilder()
 ```
 #
 ## **2. AttributedStringBuilder**
-<img src="screenshots/example2.png" width="100%" />
+<img src="https://user-images.githubusercontent.com/47267960/63836297-43c83000-c9b4-11e9-872b-088f820c2de7.png" width="100%" />
 
 ```swift
 let builder = AttributedStringBuilder()
