@@ -58,6 +58,7 @@ public enum AttributedType {
   // NSParagraphStyle
   case alignment(NSTextAlignment)
   case lineSpacing(CGFloat)
+  case lineBreakMode(NSLineBreakMode)
 
   var key: NSAttributedString.Key {
     return keyAndValue(for: self).0
@@ -107,6 +108,8 @@ public enum AttributedType {
       return (.paragraphStyle, nil)
     case .lineSpacing:
       return (.paragraphStyle, nil)
+    case .lineBreakMode:
+      return (.paragraphStyle, nil)
     }
   }
 
@@ -124,6 +127,8 @@ public enum AttributedType {
       par.alignment = value
     case let .lineSpacing(value):
       par.lineSpacing = value
+    case let .lineBreakMode(value):
+      par.lineBreakMode = value
     default:
       break
     }
