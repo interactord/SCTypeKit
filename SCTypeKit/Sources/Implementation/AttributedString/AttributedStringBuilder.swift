@@ -6,7 +6,7 @@
 import UIKit
 
 public class AttributedStringBuilder {
-  // MARK: - Properties
+  // MARK: - PropertiesattributesDictionary
 
   private var baseAttributedString = NSMutableAttributedString()
   public var defaultAttributes = [AttributedType]()
@@ -20,7 +20,7 @@ public class AttributedStringBuilder {
     defaultAttributes = attribute
   }
 
-  private func attributesDictionary(with overrides: [AttributedType]) -> [NSAttributedString.Key: Any] {
+  public func attributesDictionary(with overrides: [AttributedType]) -> [NSAttributedString.Key: Any] {
     var attributeDic = [NSAttributedString.Key: Any]()
     let paragraphStyle = NSMutableParagraphStyle()
 
